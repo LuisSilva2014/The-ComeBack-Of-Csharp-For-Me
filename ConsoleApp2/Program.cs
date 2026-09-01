@@ -448,7 +448,23 @@ namespace console1
             __Cat __animal = new __Cat();                     
             __animal.AnimalSound();
 
- 
+
+            Console.WriteLine("================= vehicle managment |  abstract clasess and inherantec ==========");
+            // Test cases
+            // VehicleManager VehicleManager = new VehicleManager();
+            VehicleManager vm = new VehicleManager();
+            //var car = new Vehicle(); // is not posible
+            var car = new xCar()
+            {
+                Id = 1, Brand = "Toyota", Model = "Camry", Year = 2022
+            };
+            vm.Add(car); // even thought is expecting a vehicle class this is is compatible as its parent is the base class
+
+            var motorcycle = new xMotorcycle(2, "Yamaha", "T", 1998);
+            vm.Add(motorcycle);
+            vm.DisplayAllVehicles();
+            vm.Remove(2);
+            vm.DisplayAllVehicles();
         }
 
         //-----------------------------------------------------------------------------------x
