@@ -1,12 +1,13 @@
-﻿using Microsoft.VisualBasic;
+﻿using LuisPracticeCsharp2026;
+using Microsoft.VisualBasic;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
+using TheComeBackOfCsharpForLuis;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-using LuisPracticeCsharp2026;
 namespace console1
 {
     internal class Program
@@ -466,7 +467,11 @@ namespace console1
             vm.Remove(2);
             vm.DisplayAllVehicles();
         }
-
+        
+        static void FileRecap()
+        {
+            (new MyFiles()).Process();
+        }
         //-----------------------------------------------------------------------------------x
         //-----------------------------------------------------------------------------------x
         static void Main(string[] args)
@@ -484,6 +489,7 @@ namespace console1
                 //_Arrays();
                 //challegeMaxProfits();
                 OOPRecap();
+                FileRecap();
 
                 //================================
                 Console.WriteLine("Please enter Y/N to continue");
@@ -493,8 +499,10 @@ namespace console1
                     _continue = false;
                 else
                 {
-                    char yesOrNo = Convert.ToChar(input?.ToLower());
-                       _continue = yesOrNo == 'y';
+                    //char yesOrNo = Convert.ToChar(input?.ToLower());
+
+                    char yesOrNo = Convert.ToChar(input[0].ToString().ToLower());
+                    _continue = yesOrNo == 'y';
                 }
 
                 if (_continue)
