@@ -243,6 +243,61 @@ namespace console1
 
         }
 
+         
+        public static void LongestCommonPrefix()
+        {
+            //https://www.w3schools.com/practice/practice.php?problem=WEEKLY020&lang=csharp
+            //int n = int.Parse(Console.ReadLine());
+            //string[] words1 = new string[n];
+            //for (int i = 0; i < n; i++) words1[i] = Console.ReadLine().Trim();
+
+
+            //string[] words = { "flower", "flow", "flight" }; // expected / fl
+            string[] words2 = { "flower", "flow",
+                "xflower", "xflow", "xflight" }; // expected / xl
+            string[] words = { "dog", "car" };
+
+            List<KeyValuePair<string, int>> prefixs = [];
+            foreach (string word in words)
+            {
+                string prefix = word.Substring(0, 2);
+                var keyfound = prefixs.Find(k => k.Key == prefix).Key;
+                if (!string.IsNullOrEmpty(keyfound))
+                {
+                    continue; // skip
+                }
+
+                int total = 0;
+                foreach (string w in words)
+                {
+                    string prefix2 = w.Substring(0, 2);
+                    if (prefix.Equals(prefix2, StringComparison.Ordinal))
+                        total++;
+                }
+
+                KeyValuePair<string, int> v = new(prefix, total);
+                prefixs.Add(v);
+            }
+
+
+            
+
+            //Console.WriteLine("==== Option 1 ========= ");
+            prefixs.Sort((x, y) => y.Value.CompareTo(x.Value)); // .Sort did not return nothing it uses reference
+            Console.WriteLine(prefixs.First().Key);
+            //Console.WriteLine(prefixs.First().Value);
+
+            //Console.WriteLine("==== Option 2 ========= ");
+            var ordered = prefixs.OrderByDescending(k => k.Key).ToList();
+            Console.WriteLine(ordered.First().Key);
+            //Console.WriteLine(ordered.First().Value);
+
+            //Console.WriteLine("==== Option 3 ========= ");
+            var maxP = prefixs.MaxBy(v => v.Value);
+            Console.WriteLine(maxP.Key);
+            //Console.WriteLine(maxP.Value);
+        }
+
         public static void challegeMaxProfits()
         {
             //Stock Buy Sell : https://www.w3schools.com/practice/practice.php?problem=WEEKLY021&lang=csharp
@@ -286,22 +341,21 @@ namespace console1
             //3,
             //6,
             //4};
-            int[] prices = new int[] {
-8,
-3,
-2,
-1
-};
+            int[] prices = new int[] { 8, 3, 2,1 };
 
             //int[] profits;
             //IEnumerable<int> profits = new IEnumerable<int>(); // can not be declated like this since it is an interface not a clas, you can not instanciate an interface.
-            List<int> profits = new List<int>();
+            List<int> profits1 = new();       // C# 9+
+            var profits2 = new List<int>();    // also valid
+            List<int> profits = new List<int>(); // before C#9
+
+
             for (int i = 0; i < prices.Length; i++)
             {
 
+                int x = prices[i];
                 for (int ii = i + 1; ii < (prices.Length); ii++)
                 {
-                    int x = prices[i];
                     int y = prices[ii];
                     int profit = (y - x);
                     //profits.Append(profit);
@@ -488,9 +542,15 @@ namespace console1
                 //RecapVarAndDynamic();
                 //_Arrays();
                 //challegeMaxProfits();
-                OOPRecap();
-                FileRecap();
+                //OOPRecap();
+                //FileRecap();
 
+                LongestCommonPrefix();
+                //xCar t;
+                //t = new xCar();
+
+                //int[] number = { 1, 2, 3 };
+                //Console.WriteLine();
                 //================================
                 Console.WriteLine("Please enter Y/N to continue");
                 string ?input = Console.ReadLine(); // can be empty or null

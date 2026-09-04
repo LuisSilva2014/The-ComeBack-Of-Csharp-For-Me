@@ -1,7 +1,9 @@
-﻿using System;
+﻿using LuisPracticeCsharp2026;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
+using System.Text;
 
 namespace TheComeBackOfCsharpForLuis
 {
@@ -16,6 +18,11 @@ namespace TheComeBackOfCsharpForLuis
             Console.WriteLine("===== Content from file ========= ");
             Console.WriteLine(readText);
 
+
+
+          
+
         }
     }
+
 }
