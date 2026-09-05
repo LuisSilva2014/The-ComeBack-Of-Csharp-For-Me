@@ -17,7 +17,7 @@ namespace console1
         static void RefReview()
         {
             Console.WriteLine("==============================================");
-            Console.WriteLine("===============RefReview======================");
+            Console.WriteLine("=============== RefReview ======================");
             Console.WriteLine("String assignment challenge");
 
             string A = "A";
