@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="ConsoleApp2/TheComeBackOfCsharpForLuis.csproj" />
+  <Project Path="WebApplication1.Started/WebApplication1.Started.csproj" Id="02d033a0-85c2-48de-b0be-e3507ea0c9db" />
+  <Project Path="WebApplication1/WebApplication1.csproj" Id="cb7ce077-5fc5-4896-abd6-f818a4990fa2" />
 </Solution>
