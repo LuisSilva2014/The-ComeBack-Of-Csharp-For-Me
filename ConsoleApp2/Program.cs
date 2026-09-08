@@ -2,12 +2,14 @@
 using Microsoft.VisualBasic;
 using System.Collections;
 using System.ComponentModel;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using TheComeBackOfCsharpForLuis;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static TheComeBackOfCsharpForLuis.Challenge2.Challenge2;
 namespace console1
 {
     internal class Program
@@ -297,7 +299,78 @@ namespace console1
             Console.WriteLine(maxP.Key);
             //Console.WriteLine(maxP.Value);
         }
+        public static void AlternatingSum()
+        {
+            //https://www.w3schools.com/practice/practice.php?problem=WEEKLY022&lang=csharp
+            //Add the first number, subtract the second, add the third, subtract the fourth, and so on.
 
+            int n = int.Parse(Console.ReadLine().Trim());
+            int[] arr = Enumerable.Range(1, n).ToArray(); // for auto sequences.
+            
+            //int[] arr = Console.ReadLine().Trim().Split(' ').Select(int.Parse).ToArray();
+            //int n = 5;
+            //int[] arr = [1, 2, 3, 4, 5];
+            int total = 0;
+            for(int i= 0; i < arr.Length; i ++)
+            {
+                bool isEven = (i % 2) == 0 ;
+                Console.WriteLine(arr[i]);
+
+                if (isEven)
+                {
+                    total += arr[i];
+                }
+                else
+                {
+                    total -= arr[i];
+                }
+            }
+            Console.WriteLine(total);
+        }
+
+        public static void CaesarCipher()
+        {
+        //https://www.w3schools.com/practice/practice.php?problem=STRINGS11&lang=csharp
+            //    Instructions
+            //    Read a string(all lowercase letters, no spaces) and a shift number from input.
+            //    Shift each letter forward in the alphabet by the shift amount. Wrap around from z back to a.
+            //    Print the encrypted string.
+            //    Input used in test:
+            //                abc
+            //    3
+            //    Important:
+            //        To solve the problem your code has to return a correct result for other values as well.
+            //        Expected Output
+            //        def
+            //        Reason: a becomes d, b becomes e, c becomes f.Each letter shifted 3 positions forward.
+
+            string text = (Console.ReadLine()).ToLower().Trim(" ").ToString();
+            int shift = int.Parse(Console.ReadLine());
+            // Encrypt and print
+            char[] alphabethList = Enumerable.Range(0, 26)
+                                      .Select(c => 
+                                          Convert.ToChar((int) 'a' + c)
+                                      ).ToArray();
+
+            char[] chars = text.ToCharArray();
+            //int l = chars.Length;
+            string newText = string.Empty;
+            for (int i = 0; i < chars.Length; i++) 
+            {
+                char c = chars[i];
+                //char nC =  Convert.ToChar( (int) c + shift); // each charch is being placed in the alphabet sequence so no need to build the alp again
+
+                int index = alphabethList.IndexOf(c);
+                //char nC = (char) alphabethList.ElementAtOrDefault((int) c + shift);
+                char nC = alphabethList.ToArray()[index + shift];
+                //int index = chars.IndexOf(c);
+                //char nC = alphabethList[index + shift];
+                newText += nC;
+            }
+
+            Console.WriteLine(newText);
+                            
+        }
         public static void challegeMaxProfits()
         {
             //Stock Buy Sell : https://www.w3schools.com/practice/practice.php?problem=WEEKLY021&lang=csharp
@@ -526,6 +599,8 @@ namespace console1
         {
             (new MyFiles()).Process();
         }
+
+        
         //-----------------------------------------------------------------------------------x
         //-----------------------------------------------------------------------------------x
         static void Main(string[] args)
@@ -545,7 +620,10 @@ namespace console1
                 //OOPRecap();
                 //FileRecap();
 
-                LongestCommonPrefix();
+                //LongestCommonPrefix();
+
+                //AlternatingSum();
+                CaesarCipher();
                 //xCar t;
                 //t = new xCar();
 
