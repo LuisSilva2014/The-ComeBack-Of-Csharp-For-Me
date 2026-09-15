@@ -13,7 +13,7 @@ namespace LuisPracticeCsharp2026
 
     public abstract class Vehicle : IVehicle
     {
-        public abstract int Id { get; set; }
+        public virtual int Id { get; set; } // when marking as abstract this will be requred for the derived class
         public abstract string Brand { get; set; }
         public abstract string Model { get; set; }
         public abstract int Year { get; set; }
@@ -28,13 +28,18 @@ namespace LuisPracticeCsharp2026
         }
 
         public abstract void StartEngine();
+
+        //public virtual void StartEngine()
+        //{
+        //    Console.WriteLine("Startig from base class");
+        //}
         public void StopEngine() // contract
         {
-            return;
+            Console.WriteLine("Stop engine from base class");
         }
-        public virtual void DisplayInfo()
+        public virtual void DisplayInfo() // virtual requires a body. vitual tell that will be overwrited
         {
-
+            Console.WriteLine("Displaying info");
         }
 
 
@@ -47,7 +52,7 @@ namespace LuisPracticeCsharp2026
     //dERIVED CLASS
     public class xCar : Vehicle
     {
-        public override int Id { get; set; }
+        //public override int Id { get; set; }
         public override string Brand { get; set; }
         public override string Model { get; set; }
         public override int Year { get; set; }

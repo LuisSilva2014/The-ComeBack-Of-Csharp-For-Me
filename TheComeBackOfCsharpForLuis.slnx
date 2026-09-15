@@ -1,5 +1,9 @@
 <Solution>
-  <Project Path="ConsoleApp2/TheComeBackOfCsharpForLuis.csproj" />
-  <Project Path="WebApplication1.Started/WebApplication1.Started.csproj" Id="02d033a0-85c2-48de-b0be-e3507ea0c9db" />
-  <Project Path="WebApplication1/WebApplication1.csproj" Id="cb7ce077-5fc5-4896-abd6-f818a4990fa2" />
+  <Folder Name="/AutoManager/">
+    <Project Path="AutoManager/AutoManager.Api/AutoManager.Api.csproj" Id="31002f68-b3d9-4272-ba78-0e4205647563" />
+    <Project Path="AutoManager/AutoManager.Application/AutoManager.Application.csproj" Id="4ebbcf93-1139-48a1-81a7-1def4dda0eac" />
+    <Project Path="AutoManager/AutoManager.Infrastructure/AutoManager.Infrastructure.csproj" Id="4f9ede38-e1ef-43c2-a860-91b57552bd04" />
+  </Folder>
+  <Project Path="ConsoleApp/TheComeBackOfCsharpForLuis.csproj" />
+  <Project Path="App.MininalApi/App.MininalApi.csproj" Id="02d033a0-85c2-48de-b0be-e3507ea0c9db" />
 </Solution>
