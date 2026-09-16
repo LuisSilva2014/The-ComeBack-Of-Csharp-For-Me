@@ -9,5 +9,8 @@ namespace AutoManager.Application.Interfaces
     {
         public ICollection<Car> GetAllByManufacturer(string manufacture);
         public Task<IEnumerable<Car>> GetAllAsync();
+        public Task<Car?> GetByIdAsync(Guid id);
+
     }
+
 }

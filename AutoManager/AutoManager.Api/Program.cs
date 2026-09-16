@@ -23,17 +23,14 @@ namespace AutoManager.Api
 
             var apiKey = Environment.GetEnvironmentVariable("VEHICLE_PARTNER_API_KEY"); // example of how an 
             // CHECK IF 
-
             // TAG: DI_Registrations 
             // To allow the entity framework context
             builder.Services.AddDbContext<VehicleManagerContext>(options =>
             {
                 options.UseSqlServer(
                     builder.Configuration.GetConnectionString("DefaultConnection"),
-                    sqlOptions => sqlOptions.EnableRetryOnFailure());
+                    sqlOptions => sqlOptions.EnableRetryOnFailure()); // used to tripe check conenctions is alive
             });
-    //        builder.Services.AddDbContext<VehicleManagerContext>(options =>
-    //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddScoped<IVehicleRepository, VehicleRepository>(); // THIS REQUIRES THE VehicleManagerContext AS IT IS BEING INJECTED 
             builder.Services.AddScoped<IVehicleService, VehicleService>();
 
@@ -47,16 +44,10 @@ namespace AutoManager.Api
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
-
-            app.MapGet("/health", () => "OK"); // Minimal api for quick testing, similar like node does
+            app.MapGet("/health", () => "OK"); // Minimal_api for quick testing, similar like node does
             app.Run();
-
-            
         }
     }
 }

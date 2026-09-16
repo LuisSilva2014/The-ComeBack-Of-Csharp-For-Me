@@ -36,5 +36,11 @@ namespace AutoManager.Application.Services
         {
             return await _vehicleRepository.GetAllAsync(); ;
         }
+
+        public async Task<Car?> GetByIdAsync(Guid id)
+        {
+            return await _vehicleRepository.GetByIdAsync(id);
+        }
+
     }
 }

@@ -42,8 +42,13 @@ namespace AutoManager.Infrastructure.Repository
 
             // Lets filter using the paging settings
             return  await _dbContext.Cars.ToListAsync(); // return all
-        }  
+        }
 
+        public async Task<Car?> GetByIdAsync(Guid id)
+        {
+            Car car = await _dbContext.Cars.Where( _=> _.Id == id).FirstOrDefaultAsync();
+            return car;
+        }
 
 
         public async Task<IEnumerable<User>> GetUsersAsync()
