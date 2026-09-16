@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoManager.Application\AutoManager2.Application.csproj" />
+    <ProjectReference Include="..\AutoManager.Application\AutoManager.Application.csproj" />
   </ItemGroup>
 
 </Project>

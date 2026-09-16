@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoManager.Application\AutoManager2.Application.csproj" />
-    <ProjectReference Include="..\AutoManager.Infrastructure\AutoManager2.Infrastructure.csproj" />
+    <ProjectReference Include="..\AutoManager.Application\AutoManager.Application.csproj" />
+    <ProjectReference Include="..\AutoManager.Infrastructure\AutoManager.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

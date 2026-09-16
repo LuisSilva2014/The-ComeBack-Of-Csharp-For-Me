@@ -1,9 +1,8 @@
-﻿using AutoManager2.Infrastructure.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutoManager2.Application.Entities
+namespace AutoManager.Application.Entities
 {
     public partial class Car
     {

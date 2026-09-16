@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AutoManager2.Infrastructure.EFConfig
+namespace AutoManager.Infrastructure.Models
 {
     public static class DbContextExtensions
     {

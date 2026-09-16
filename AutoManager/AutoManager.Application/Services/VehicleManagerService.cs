@@ -1,11 +1,11 @@
-﻿using AutoManager2.Application.Entities;
-using AutoManager2.Application.Interfaces;
+﻿using AutoManager.Application.Entities;
+using AutoManager.Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace AutoManager2.Application.Services
+namespace AutoManager.Application.Services
 {
     public class VehicleManagerService : IVehicleRepository
     {

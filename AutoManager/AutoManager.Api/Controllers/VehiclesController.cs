@@ -1,10 +1,10 @@
-﻿using AutoManager2.Application.Entities;
-using AutoManager2.Application.Interfaces;
+﻿using AutoManager.Application.Entities;
+using AutoManager.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 
-namespace AutoManager2.Api.Controllers
+namespace AutoManager.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,12 +1,12 @@
-﻿using AutoManager2.Application.Entities;
-using AutoManager2.Application.Interfaces;
-using AutoManager2.Infrastructure.EFConfig;
+﻿using AutoManager.Application.Entities;
+using AutoManager.Application.Interfaces;
+using AutoManager.Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutoManager2.Infrastructure.Repository
+namespace AutoManager.Infrastructure.Repository
 {
     internal class VehicleRepository : IVehicleRepository
     {

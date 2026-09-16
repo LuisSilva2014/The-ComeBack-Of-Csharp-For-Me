@@ -3,9 +3,9 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using AutoManager2.Application.Entities;
+using AutoManager.Application.Entities;
 
-namespace AutoManager2.Infrastructure.EFConfig
+namespace AutoManager.Infrastructure.Models
 {
 
     public partial class VehicleManagerContext : DbContext

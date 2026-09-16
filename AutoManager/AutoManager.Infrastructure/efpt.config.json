@@ -11,7 +11,7 @@
    "OutputPath": "Models",
    "PluralRules": null,
    "PreserveCasingWithRegex": true,
-   "ProjectRootNamespace": "AutoManager2.Infrastructure",
+   "ProjectRootNamespace": "AutoManager.Infrastructure",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 2,
    "SelectedToBeGenerated": 0,

@@ -11,7 +11,11 @@ namespace AutoManager.Api
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+            builder.Services.AddOpenApi();  // this will open this link
+        //https://localhost:7010/openapi/v1.json
+
+
+
 
             var app = builder.Build();
 
@@ -28,19 +32,9 @@ namespace AutoManager.Api
 
             app.MapControllers();
 
+            app.MapGet("/health", () => "OK");
             app.Run();
 
-
-
-
-
-
-
-
-
-
-
-            ===============
             
         }
     }

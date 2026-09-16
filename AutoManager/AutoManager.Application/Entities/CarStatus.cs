@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutoManager2.Application.Entities
+namespace AutoManager.Application.Entities
 {
     public partial class CarStatus
     {

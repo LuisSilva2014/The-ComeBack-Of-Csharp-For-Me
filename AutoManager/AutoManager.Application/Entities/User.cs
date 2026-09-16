@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace AutoManager2.Application.Entities;
+namespace AutoManager.Application.Entities;
 
 public partial class User
 {

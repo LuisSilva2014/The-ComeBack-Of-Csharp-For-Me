@@ -1,9 +1,9 @@
-﻿using AutoManager2.Application.Entities;
+﻿using AutoManager.Application.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutoManager2.Application.Interfaces
+namespace AutoManager.Application.Interfaces
 {
     public interface IVehicleRepository
     {
