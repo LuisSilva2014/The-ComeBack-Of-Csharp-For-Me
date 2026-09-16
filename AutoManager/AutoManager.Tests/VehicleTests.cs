@@ -7,6 +7,8 @@ namespace AutoManager.Tests
 {
     public class VehicleTests
     {
+        //Test #1: Vehicle Exists
+        //Purpose: Verify the service returns a vehicle when found.
         [Fact]
         public async Task GetByIdAsync_WhenVehicleExists_ReturnsVehicle()
         {
@@ -28,6 +30,8 @@ namespace AutoManager.Tests
             Assert.Equal(id, result!.Id);
         }
 
+        //Test #2: Vehicle Does Not Exist
+          //Purpose: Verify the service returns null when not found.
         [Fact]
         public async Task GetByIdAsync_WhenVehicleDoesNotExist_ReturnsNull()
         {
