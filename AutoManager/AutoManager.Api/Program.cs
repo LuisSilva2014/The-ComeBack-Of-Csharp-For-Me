@@ -1,4 +1,10 @@
 
+using AutoManager.Application.Interfaces;
+using AutoManager.Application.Services;
+using AutoManager.Infrastructure.Models;
+using AutoManager.Infrastructure.Repository;
+using Microsoft.EntityFrameworkCore;
+
 namespace AutoManager.Api
 {
     public class Program
@@ -12,11 +18,24 @@ namespace AutoManager.Api
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();  // this will open this link
-        //https://localhost:7010/openapi/v1.json
+                                            //https://localhost:7010/openapi/v1.json
+                                            //http://localhost:5010/openapi/v1.json
 
+            var apiKey = Environment.GetEnvironmentVariable("VEHICLE_PARTNER_API_KEY"); // example of how an 
+            // CHECK IF 
 
+            // TAG: DI_Registrations 
+            // To allow the entity framework context
+            builder.Services.AddDbContext<VehicleManagerContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
+    //        builder.Services.AddDbContext<VehicleManagerContext>(options =>
+    //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddScoped<IVehicleService, VehicleService>();
+            builder.Services.AddScoped<IVehicleRepository, VehicleRepository>(); // THIS REQUIRES THE VehicleManagerContext AS IT IS BEING INJECTED 
 
-
+            //==================================
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -32,7 +51,7 @@ namespace AutoManager.Api
 
             app.MapControllers();
 
-            app.MapGet("/health", () => "OK");
+            app.MapGet("/health", () => "OK"); // Minimal api for quick testing, similar like node does
             app.Run();
 
             

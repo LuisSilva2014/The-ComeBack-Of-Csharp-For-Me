@@ -8,7 +8,7 @@ using System.Text;
 
 namespace AutoManager.Infrastructure.Repository
 {
-    internal class VehicleRepository : IVehicleRepository
+    public class VehicleRepository : IVehicleRepository
     {
 
         private VehicleManagerContext _dbContext;

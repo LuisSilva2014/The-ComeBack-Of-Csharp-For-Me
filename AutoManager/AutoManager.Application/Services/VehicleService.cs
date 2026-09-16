@@ -7,14 +7,14 @@ using System.Text;
 
 namespace AutoManager.Application.Services
 {
-    public class VehicleManagerService : IVehicleRepository
+    public class VehicleService : IVehicleService
     {
         private readonly IVehicleRepository _vehicleRepository;
-        public VehicleManagerService(IVehicleRepository vehicleRepository)
+        public VehicleService(IVehicleRepository vehicleRepository)
         {
             _vehicleRepository = vehicleRepository;
         }
-        ~VehicleManagerService()
+        ~VehicleService()
         {
             // Deconstructor
         }

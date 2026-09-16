@@ -16,6 +16,7 @@ namespace AutoManager.Api.Controllers
             _vehicleService = vehicleService;
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetAll()
         {
             var vehicles = await _vehicleService.GetAllAsync();
