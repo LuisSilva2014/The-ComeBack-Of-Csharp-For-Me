@@ -27,8 +27,23 @@ namespace AutoManager.Infrastructure.Repository
         }
 
         public async Task<IEnumerable<Car>> GetAllAsync() {
-            return  await _dbContext.Cars.ToListAsync();
+
+            int pageNumber = 1;
+            int pageSize =10;
+
+            pageNumber = Math.Max(1, pageNumber);
+            pageSize = Math.Max(1, pageSize);
+
+            return await _dbContext.Cars
+                .AsNoTracking()
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            // Lets filter using the paging settings
+            return  await _dbContext.Cars.ToListAsync(); // return all
         }  
+
 
 
         public async Task<IEnumerable<User>> GetUsersAsync()

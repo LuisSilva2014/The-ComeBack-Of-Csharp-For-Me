@@ -28,12 +28,14 @@ namespace AutoManager.Api
             // To allow the entity framework context
             builder.Services.AddDbContext<VehicleManagerContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("DefaultConnection"),
+                    sqlOptions => sqlOptions.EnableRetryOnFailure());
             });
     //        builder.Services.AddDbContext<VehicleManagerContext>(options =>
     //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-            builder.Services.AddScoped<IVehicleService, VehicleService>();
             builder.Services.AddScoped<IVehicleRepository, VehicleRepository>(); // THIS REQUIRES THE VehicleManagerContext AS IT IS BEING INJECTED 
+            builder.Services.AddScoped<IVehicleService, VehicleService>();
 
             //==================================
             var app = builder.Build();
